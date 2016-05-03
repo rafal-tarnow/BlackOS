@@ -2,6 +2,11 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <string>
+#include <vector>
+
+using namespace std;
+
 
 namespace Ui {
 class Widget;
@@ -16,7 +21,10 @@ public:
     ~Widget();
 
 private:
+    vector<string> list_directory(const char * directoryName);
+    string get_file_extension(const string& FileName);
     Ui::Widget *ui;
+    string application_menu_path = "/usr/share/applications/";
 };
 
 #endif // WIDGET_H
